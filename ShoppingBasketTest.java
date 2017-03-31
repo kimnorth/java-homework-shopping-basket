@@ -23,4 +23,12 @@ public class ShoppingBasketTest {
     assertEquals(1, shoppingBasket.getBasketSize());
   }
 
+  @Test
+  public void canRemoveItem(){
+    shoppingBasket = new ShoppingBasket();
+    shoppingBasket.addItem("Washing Powder", 400);
+    shoppingBasket.deleteItem("Washing Powder");
+    assertEquals(0, shoppingBasket.getBasketSize());
+  }
+
 }

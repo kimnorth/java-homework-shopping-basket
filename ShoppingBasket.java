@@ -16,4 +16,8 @@ public class ShoppingBasket {
     basket.put(item, price);
   }
 
+  public void deleteItem(String item){
+    this.basket.remove(item);
+  }
+
 }
