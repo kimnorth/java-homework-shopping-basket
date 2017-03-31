@@ -6,6 +6,7 @@ public class ShoppingBasketTest {
 
   ShoppingBasket shoppingBasket;
   Product washingPowder;
+  Product milk;
 
   @Before
   public void before(){
@@ -39,6 +40,18 @@ public class ShoppingBasketTest {
     shoppingBasket.addItem(washingPowder);
     shoppingBasket.emptyBasket();
     assertEquals(0, shoppingBasket.getBasketSize());
+  }
+
+  @Test
+  public void canAddUpBasket(){
+    Integer expected = 800;
+    washingPowder = new Product("Washing Powder", 400, false);
+    milk = new Product("Milk", 400, false);
+    shoppingBasket.addItem(milk);
+    shoppingBasket.addItem(washingPowder);
+    shoppingBasket.addUpBasket();
+    System.out.println(shoppingBasket.getBasketSize());
+    assertEquals( expected, shoppingBasket.getBasketTotal() );
   }
 
 }

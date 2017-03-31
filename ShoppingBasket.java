@@ -3,9 +3,11 @@ import java.util.*;
 public class ShoppingBasket {
 
   private ArrayList<Product> basket;
+  private Integer basketTotal;
 
   public ShoppingBasket(){
     this.basket = new ArrayList<Product>();
+    this.basketTotal = 0;
   }
 
   public int getBasketSize(){
@@ -22,6 +24,18 @@ public class ShoppingBasket {
 
   public void emptyBasket(){
     this.basket = new ArrayList<Product>();
+  }
+
+  public void addUpBasket(){
+    Integer total = 0;
+    for (Product product : basket) {
+      total += product.getPrice();
+    }
+    this.basketTotal = total;
+  }
+
+  public Integer getBasketTotal(){
+    return this.basketTotal;
   }
 
 }
