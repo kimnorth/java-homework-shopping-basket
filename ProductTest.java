@@ -27,4 +27,10 @@ public class ProductTest {
     assertEquals(false, milk.getBogof() );
   }
 
+  @Test
+  public void testSetBogof(){
+    milk.setBogof(true);
+    assertEquals(true, milk.getBogof());
+  }
+
 }

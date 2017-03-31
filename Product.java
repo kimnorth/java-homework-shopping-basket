@@ -22,4 +22,8 @@ public class Product {
     return this.bogof;
   }
 
+  public void setBogof(Boolean adjustBogof){
+    this.bogof = adjustBogof;
+  }
+
 }
