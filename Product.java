@@ -10,6 +10,8 @@ public class Product {
     this.bogof = bogof;
   }
 
-  
+  public String getName(){
+    return this.name;
+  }
 
 }
