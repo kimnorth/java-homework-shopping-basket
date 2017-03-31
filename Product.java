@@ -20,6 +20,6 @@ public class Product {
 
   public Boolean getBogof(){
     return this.bogof;
-  } 
+  }
 
 }

@@ -2,26 +2,26 @@ import java.util.*;
 
 public class ShoppingBasket {
 
-  private HashMap<String, Integer> basket;
+  private ArrayList<Product> basket;
 
   public ShoppingBasket(){
-    this.basket = new HashMap<String, Integer>();
+    this.basket = new ArrayList<Product>();
   }
 
   public int getBasketSize(){
     return this.basket.size();
   }
 
-  public void addItem(String item, Integer price){
-    basket.put(item, price);
+  public void addItem(Product product){
+    basket.add(product);
   }
 
-  public void deleteItem(String item){
-    this.basket.remove(item);
-  }
+  public void deleteItem(Product product){
+      basket.remove(product);
+    }
 
   public void emptyBasket(){
-    this.basket = new HashMap<String, Integer>();
+    this.basket = new ArrayList<Product>();
   }
 
 }

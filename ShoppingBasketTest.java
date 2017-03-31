@@ -5,10 +5,12 @@ import static org.junit.Assert.*;
 public class ShoppingBasketTest {
 
   ShoppingBasket shoppingBasket;
+  Product washingPowder;
 
   @Before
   public void before(){
     shoppingBasket = new ShoppingBasket();
+    washingPowder = new Product("Washing Powder", 400, false);
   }
 
   @Test
@@ -19,23 +21,22 @@ public class ShoppingBasketTest {
   @Test
   public void canAddItem(){
     shoppingBasket = new ShoppingBasket();
-    shoppingBasket.addItem("Washing Powder", 400);
+    shoppingBasket.addItem(washingPowder);
     assertEquals(1, shoppingBasket.getBasketSize());
   }
 
   @Test
   public void canRemoveItem(){
     shoppingBasket = new ShoppingBasket();
-    shoppingBasket.addItem("Washing Powder", 400);
-    shoppingBasket.deleteItem("Washing Powder");
+    shoppingBasket.addItem(washingPowder);
+    shoppingBasket.deleteItem(washingPowder);
     assertEquals(0, shoppingBasket.getBasketSize());
   }
 
   @Test
   public void canEmptyBasket(){
     shoppingBasket = new ShoppingBasket();
-    shoppingBasket.addItem("Washing Power", 400);
-    shoppingBasket.addItem("Bread", 150);
+    shoppingBasket.addItem(washingPowder);
     shoppingBasket.emptyBasket();
     assertEquals(0, shoppingBasket.getBasketSize());
   }
