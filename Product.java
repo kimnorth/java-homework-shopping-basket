@@ -14,4 +14,8 @@ public class Product {
     return this.name;
   }
 
+  public Integer getPrice(){
+    return this.price;
+  }
+
 }
