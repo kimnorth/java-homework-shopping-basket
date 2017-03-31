@@ -20,4 +20,8 @@ public class ShoppingBasket {
     this.basket.remove(item);
   }
 
+  public void emptyBasket(){
+    this.basket = new HashMap<String, Integer>();
+  }
+
 }
