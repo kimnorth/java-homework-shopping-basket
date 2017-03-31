@@ -18,4 +18,8 @@ public class Product {
     return this.price;
   }
 
+  public Boolean getBogof(){
+    return this.bogof;
+  } 
+
 }

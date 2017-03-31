@@ -22,4 +22,9 @@ public class ProductTest {
     assertEquals( expected, milk.getPrice() );
   }
 
+  @Test
+  public void testGetBogof(){
+    assertEquals(false, milk.getBogof() );
+  }
+
 }
