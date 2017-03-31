@@ -16,4 +16,11 @@ public class ShoppingBasketTest {
     assertEquals(0, shoppingBasket.getBasketSize());
   }
 
+  @Test
+  public void canAddItem(){
+    shoppingBasket = new ShoppingBasket();
+    shoppingBasket.addItem("Washing Powder", 400);
+    assertEquals(1, shoppingBasket.getBasketSize());
+  }
+
 }

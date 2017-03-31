@@ -12,4 +12,8 @@ public class ShoppingBasket {
     return this.basket.size();
   }
 
+  public void addItem(String item, Integer price){
+    basket.put(item, price);
+  }
+
 }
