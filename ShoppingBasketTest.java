@@ -50,7 +50,6 @@ public class ShoppingBasketTest {
     shoppingBasket.addItem(milk);
     shoppingBasket.addItem(washingPowder);
     shoppingBasket.addUpBasket();
-    System.out.println(shoppingBasket.getBasketSize());
     assertEquals( expected, shoppingBasket.getBasketTotal() );
   }
 
