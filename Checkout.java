@@ -20,4 +20,11 @@ public class Checkout {
     return this.grandTotal;
   }
 
+  public void calculateGrandTotal(){
+    Integer subTotal = 0;
+    this.customer.getBasket().addUpBasket();
+    subTotal = this.customer.getBasket().getBasketTotal();
+    this.grandTotal = subTotal;
+  }
+
 }

@@ -22,5 +22,9 @@ public class Customer {
     return this.basket.getBasketSize();
   }
 
+  public ShoppingBasket getBasket(){
+    return this.basket;
+  }
+
 
 }
