@@ -19,4 +19,11 @@ public class CheckoutTest {
     assertEquals( "Steve", checkout.getCustomer().getName() );
   }
 
+  @Test
+  public void testGetGrandTotal(){
+    checkout.addCustomer(steve);
+    Integer expected = 0;
+    assertEquals(expected, checkout.getGrandTotal());
+  }
+
 }
