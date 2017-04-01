@@ -8,9 +8,7 @@ public class CustomerTest {
 
   @Before
   public void before(){
-
     steve = new Customer("Steve", true);
-
   }
 
   @Test
@@ -21,6 +19,12 @@ public class CustomerTest {
   @Test
   public void canGetLoyaltyCard(){
     assertEquals(true, steve.getLoyaltyCard() );
+  }
+
+  @Test
+  public void canGetCustomerShopping(){
+    Integer expected = 0;
+    assertEquals(expected, steve.getShoppingSize() );
   }
 
 }
