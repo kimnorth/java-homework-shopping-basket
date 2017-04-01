@@ -18,4 +18,9 @@ public class CustomerTest {
     assertEquals( "Steve", steve.getName() );
   }
 
+  @Test
+  public void canGetLoyaltyCard(){
+    assertEquals(true, steve.getLoyaltyCard() );
+  }
+
 }
