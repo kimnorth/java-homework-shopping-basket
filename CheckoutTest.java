@@ -44,11 +44,11 @@ public class CheckoutTest {
   public void testCanCalculateBOGOF(){
     checkout = new Checkout();
     steve = new Customer("Steve", true);
-    basket = new ShoppingBasket();
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
+    checkout.addCustomer(steve);
+    checkout.calculateGrandTotal();
     Integer expected = 400;
-    checkout.calculateBOGOF(); 
     assertEquals(expected, checkout.getGrandTotal() );
 
   }
