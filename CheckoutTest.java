@@ -40,17 +40,17 @@ public class CheckoutTest {
     assertEquals(expected, checkout.getGrandTotal());
   }
 
-  // @Test
-  // public void testCanCalculateBOGOF(){
-  //   checkout = new Checkout();
-  //   steve = new Customer("Steve", true);
-  //   basket = new ShoppingBasket();
-  //   steve.getBasket().addItem(milk);
-  //   steve.getBasket().addItem(milk);
-  //   Integer expected = 400;
-  //   checkout.calculateBOGOF(); 
-  //   assertEquals(expected, checkout.getGrandTotal() );
+  @Test
+  public void testCanCalculateBOGOF(){
+    checkout = new Checkout();
+    steve = new Customer("Steve", true);
+    basket = new ShoppingBasket();
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    Integer expected = 400;
+    checkout.calculateBOGOF(); 
+    assertEquals(expected, checkout.getGrandTotal() );
 
-  // }
+  }
 
 }
