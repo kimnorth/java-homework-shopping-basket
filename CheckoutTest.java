@@ -14,7 +14,7 @@ public class CheckoutTest {
   @Before
   public void before(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     basket = new ShoppingBasket();
     milk = new Product("Milk", 400, true);
     beerKeg = new Product("Beer Keg", 2500, false);
@@ -45,7 +45,7 @@ public class CheckoutTest {
   @Test
   public void testCanCalculateBOGOF(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
     checkout.addCustomer(steve);
@@ -57,7 +57,7 @@ public class CheckoutTest {
   @Test
   public void testCanCalculateBOGOFWithOnlyOneItem(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     steve.getBasket().addItem(milk);
     checkout.addCustomer(steve);
     checkout.calculateGrandTotal();
@@ -68,7 +68,7 @@ public class CheckoutTest {
   @Test
   public void testCanCalculateBOGOFWithThreeItems(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
@@ -81,7 +81,7 @@ public class CheckoutTest {
   @Test
   public void testCanCalculateBOGOFWithTenItems(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
@@ -101,7 +101,7 @@ public class CheckoutTest {
   @Test
   public void testCanCalculateBOGOFWithMultipleAppicableItems(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     washingPowder = new Product("Washing Powder", 200, true);
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
@@ -116,7 +116,7 @@ public class CheckoutTest {
   @Test
   public void testCanCalculateBOGOFWithSomeApplicableSomeNot(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     washingPowder = new Product("Washing Powder", 200, false);
     steve.getBasket().addItem(milk);
     steve.getBasket().addItem(milk);
@@ -131,7 +131,7 @@ public class CheckoutTest {
   @Test
   public void testCanTake10PercentOff(){
     checkout = new Checkout();
-    steve = new Customer("Steve", true);
+    steve = new Customer("Steve", false);
     steve.getBasket().addItem(beerKeg);
     checkout.addCustomer(steve);
     checkout.calculateGrandTotal();

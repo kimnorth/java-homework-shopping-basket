@@ -31,6 +31,8 @@ public class Checkout {
     subTotal -= bogofDiscount;
     Integer over20Discount = calculate20Discount(subTotal);
     subTotal -= over20Discount;
+    Integer loyaltyCard = calculateLoyaltyDiscount(subTotal);
+    subTotal -= loyaltyCard;
     this.grandTotal = subTotal;
   }
 
@@ -94,6 +96,21 @@ public class Checkout {
     else {
       return 0;
     }
+  }
+
+  public Integer calculateLoyaltyDiscount(Integer subTotal){
+
+    if (customer.getLoyaltyCard().equals(true)){
+      Double subTotalToDouble = subTotal.doubleValue();
+      Double doubleSubTotal = subTotalToDouble * 0.02;
+      Integer discount = doubleSubTotal.intValue();
+      return discount;
+    }
+
+    else {
+      return 0;
+    }
+
   }
 
 }
