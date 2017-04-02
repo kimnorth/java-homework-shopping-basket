@@ -27,4 +27,14 @@ public class Checkout {
     this.grandTotal = subTotal;
   }
 
+  // public Integer calculateBOGOF(Integer subTotal){
+  //   ArrayList<Product> multipleItemsArray = new ArrayList<Product>(); 
+  //   for ( Product product : this.customer.getBasket() ){
+  //     if (product.getBogof().equals(true)){
+  //       // half price
+  //     }
+  //   }
+
+  // }
+
 }

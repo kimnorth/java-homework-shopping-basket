@@ -16,14 +16,16 @@ public class ShoppingBasketTest {
 
   @Test
   public void canGiveBasketContents(){
-    assertEquals(0, shoppingBasket.getBasketSize());
+    Integer expected = 0;
+    assertEquals(expected, shoppingBasket.getBasketSize());
   }
 
   @Test
   public void canAddItem(){
     shoppingBasket = new ShoppingBasket();
     shoppingBasket.addItem(washingPowder);
-    assertEquals(1, shoppingBasket.getBasketSize());
+    Integer expected = 1;
+    assertEquals(expected, shoppingBasket.getBasketSize());
   }
 
   @Test
@@ -31,7 +33,8 @@ public class ShoppingBasketTest {
     shoppingBasket = new ShoppingBasket();
     shoppingBasket.addItem(washingPowder);
     shoppingBasket.deleteItem(washingPowder);
-    assertEquals(0, shoppingBasket.getBasketSize());
+    Integer expected = 0;
+    assertEquals(expected, shoppingBasket.getBasketSize());
   }
 
   @Test
@@ -39,7 +42,8 @@ public class ShoppingBasketTest {
     shoppingBasket = new ShoppingBasket();
     shoppingBasket.addItem(washingPowder);
     shoppingBasket.emptyBasket();
-    assertEquals(0, shoppingBasket.getBasketSize());
+    Integer expected = 0;
+    assertEquals(expected, shoppingBasket.getBasketSize());
   }
 
   @Test
@@ -51,6 +55,15 @@ public class ShoppingBasketTest {
     shoppingBasket.addItem(washingPowder);
     shoppingBasket.addUpBasket();
     assertEquals( expected, shoppingBasket.getBasketTotal() );
+  }
+
+  @Test
+  public void testCanAddMultipleIdenticalItems(){
+    milk = new Product("Milk", 400, true);
+    shoppingBasket.addItem(milk);
+    shoppingBasket.addItem(milk);
+    Integer expected = 2;
+    assertEquals(expected, shoppingBasket.getBasketSize());
   }
 
 }

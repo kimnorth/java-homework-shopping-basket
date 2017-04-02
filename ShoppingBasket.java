@@ -10,7 +10,7 @@ public class ShoppingBasket {
     this.basketTotal = 0;
   }
 
-  public int getBasketSize(){
+  public Integer getBasketSize(){
     return this.basket.size();
   }
 
@@ -36,6 +36,10 @@ public class ShoppingBasket {
 
   public Integer getBasketTotal(){
     return this.basketTotal;
+  }
+
+  public ArrayList<Product> getBasketItems(){
+    return this.basket;
   }
 
 }

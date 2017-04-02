@@ -8,13 +8,14 @@ public class CheckoutTest {
   Customer steve;
   ShoppingBasket basket;
   Product milk;
+  Product milk2;
 
   @Before
   public void before(){
     checkout = new Checkout();
     steve = new Customer("Steve", true);
     basket = new ShoppingBasket();
-    milk = new Product("Milk", 400, false);
+    milk = new Product("Milk", 400, true);
   }
 
   @Test
@@ -38,5 +39,18 @@ public class CheckoutTest {
     Integer expected = 400;
     assertEquals(expected, checkout.getGrandTotal());
   }
+
+  // @Test
+  // public void testCanCalculateBOGOF(){
+  //   checkout = new Checkout();
+  //   steve = new Customer("Steve", true);
+  //   basket = new ShoppingBasket();
+  //   steve.getBasket().addItem(milk);
+  //   steve.getBasket().addItem(milk);
+  //   Integer expected = 400;
+  //   checkout.calculateBOGOF(); 
+  //   assertEquals(expected, checkout.getGrandTotal() );
+
+  // }
 
 }

@@ -33,4 +33,11 @@ public class ProductTest {
     assertEquals(true, milk.getBogof());
   }
 
+  @Test
+  public void testCanSetPrice(){
+    milk.halfPrice();
+    Integer expected = 50;
+    assertEquals(expected, milk.getPrice());
+  }
+
 }

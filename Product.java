@@ -18,6 +18,10 @@ public class Product {
     return this.price;
   }
 
+  public void halfPrice(){
+    this.price = (this.price / 2);
+  }
+
   public Boolean getBogof(){
     return this.bogof;
   }
