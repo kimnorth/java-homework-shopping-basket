@@ -52,6 +52,9 @@ public class Checkout {
           this.bogofItems.put(product.getName(), this.bogofItems.get(product.getName()) + 1);
         }
       }
+      else if (product.getBogof().equals(false)){
+        continue;
+      }
     }
 
   }
@@ -59,6 +62,7 @@ public class Checkout {
   public Integer calculateBOGOFTotalDiscount(){
     Integer bogofTotalDiscount = 0;
     for ( Product product : this.customer.getBasket().getBasketItems() ){
+      if ( bogofItems.get(product.getName()) != null ){
       int bogofItemValue = bogofItems.get(product.getName());
       if (bogofItemValue == 1){
         continue;
@@ -73,6 +77,7 @@ public class Checkout {
         this.bogofItems.put(product.getName(), 1);
       }
     }
+  }
     return bogofTotalDiscount;
   }
 
