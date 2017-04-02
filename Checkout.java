@@ -29,6 +29,10 @@ public class Checkout {
     Integer bogofDiscount = calculateBOGOF();
     Integer subTotal = this.customer.getBasket().getBasketTotal();
     subTotal -= bogofDiscount;
+    System.out.println("Subtotal before 20 discount: " + subTotal);
+    Integer over20Discount = calculate20Discount(subTotal);
+    subTotal -= over20Discount;
+    System.out.println("Subtotal after 20 discount: " + subTotal);
     this.grandTotal = subTotal;
   }
 
@@ -79,6 +83,19 @@ public class Checkout {
     }
   }
     return bogofTotalDiscount;
+  }
+
+  public Integer calculate20Discount(Integer subTotal){
+
+    if (subTotal > 2000){
+      Double subTotalToDouble = subTotal.doubleValue();
+      Double doubleSubTotal = subTotalToDouble * 0.1;
+      Integer discount = doubleSubTotal.intValue();
+      return discount;
+    }
+    else {
+      return 0;
+    }
   }
 
 }

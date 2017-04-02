@@ -9,6 +9,7 @@ public class CheckoutTest {
   ShoppingBasket basket;
   Product milk;
   Product washingPowder;
+  Product beerKeg;
 
   @Before
   public void before(){
@@ -16,6 +17,7 @@ public class CheckoutTest {
     steve = new Customer("Steve", true);
     basket = new ShoppingBasket();
     milk = new Product("Milk", 400, true);
+    beerKeg = new Product("Beer Keg", 2500, false);
   }
 
   @Test
@@ -123,6 +125,17 @@ public class CheckoutTest {
     checkout.addCustomer(steve);
     checkout.calculateGrandTotal();
     Integer expected = 800;
+    assertEquals(expected, checkout.getGrandTotal());
+  }
+
+  @Test
+  public void testCanTake10PercentOff(){
+    checkout = new Checkout();
+    steve = new Customer("Steve", true);
+    steve.getBasket().addItem(beerKeg);
+    checkout.addCustomer(steve);
+    checkout.calculateGrandTotal();
+    Integer expected = 2250;
     assertEquals(expected, checkout.getGrandTotal());
   }
 
