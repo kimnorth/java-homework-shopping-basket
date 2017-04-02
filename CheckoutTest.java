@@ -139,4 +139,15 @@ public class CheckoutTest {
     assertEquals(expected, checkout.getGrandTotal());
   }
 
+  @Test
+  public void testCanDeductLoyaltyPercent(){
+    checkout = new Checkout();
+    steve = new Customer("Steve", true);
+    steve.getBasket().addItem(beerKeg);
+    checkout.addCustomer(steve);
+    checkout.calculateGrandTotal();
+    Integer expected = 2205;
+    assertEquals(expected, checkout.getGrandTotal());
+  }
+
 }
