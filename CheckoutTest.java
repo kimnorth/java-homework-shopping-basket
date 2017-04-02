@@ -8,7 +8,7 @@ public class CheckoutTest {
   Customer steve;
   ShoppingBasket basket;
   Product milk;
-  Product milk2;
+  Product washingPowder;
 
   @Before
   public void before(){
@@ -93,6 +93,21 @@ public class CheckoutTest {
     checkout.addCustomer(steve);
     checkout.calculateGrandTotal();
     Integer expected = 2000;
+    assertEquals(expected, checkout.getGrandTotal());
+  }
+
+  @Test
+  public void testCanCalculateBOGOFWithMultipleAppicableItems(){
+    checkout = new Checkout();
+    steve = new Customer("Steve", true);
+    washingPowder = new Product("Washing Powder", 200, true);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(washingPowder);
+    steve.getBasket().addItem(washingPowder);
+    checkout.addCustomer(steve);
+    checkout.calculateGrandTotal();
+    Integer expected = 600;
     assertEquals(expected, checkout.getGrandTotal());
   }
 
