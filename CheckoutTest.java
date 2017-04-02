@@ -76,4 +76,24 @@ public class CheckoutTest {
     assertEquals(expected, checkout.getGrandTotal());
   }
 
+  @Test
+  public void testCanCalculateBOGOFWithTenItems(){
+    checkout = new Checkout();
+    steve = new Customer("Steve", true);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    steve.getBasket().addItem(milk);
+    checkout.addCustomer(steve);
+    checkout.calculateGrandTotal();
+    Integer expected = 2000;
+    assertEquals(expected, checkout.getGrandTotal());
+  }
+
 }
