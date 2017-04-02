@@ -56,23 +56,10 @@ public class Checkout {
 
   }
 
-  // Loops through customer's basket
-  // Gets the number of items to see how many bogof deals there are
-  // if the bogof listing for that item only has 1, loops onto next item in cutomer basket
-  // if the bogof listening for that item is even, it sets the total bogof item up by half the total price of the bogof items in the list
-  // but it then goes on to the next item in the basket and does the same again!
-  // so how do we stop that happening? Delete the item from the bogof list?
-
-  // maybe just delete it from the list of bogof items? We'll only need the list once.
-
   public Integer calculateBOGOFTotalDiscount(){
-
     Integer bogofTotalDiscount = 0;
-
     for ( Product product : this.customer.getBasket().getBasketItems() ){
-
       int bogofItemValue = bogofItems.get(product.getName());
-
       if (bogofItemValue == 1){
         continue;
       }
@@ -80,17 +67,13 @@ public class Checkout {
         bogofTotalDiscount += ( (product.getPrice() * bogofItemValue) / 2 ); 
         this.bogofItems.put(product.getName(), 1);
       }
-      else if (bogofItemValue % 2 != 0){
-        
+      else if (bogofItemValue % 2 != 0){ 
         Integer numberOfApplicableItems = (bogofItemValue - 1);
         bogofTotalDiscount += ( (product.getPrice() * numberOfApplicableItems ) / 2 );
         this.bogofItems.put(product.getName(), 1);
       }
-
     }
-
     return bogofTotalDiscount;
-
   }
 
 }

@@ -50,7 +50,17 @@ public class CheckoutTest {
     checkout.calculateGrandTotal();
     Integer expected = 400;
     assertEquals(expected, checkout.getGrandTotal() );
+  }
 
+  @Test
+  public void testCanCalculateBOGOFWithOnlyOneItem(){
+    checkout = new Checkout();
+    steve = new Customer("Steve", true);
+    steve.getBasket().addItem(milk);
+    checkout.addCustomer(steve);
+    checkout.calculateGrandTotal();
+    Integer expected = 400;
+    assertEquals(expected, checkout.getGrandTotal());
   }
 
 }
